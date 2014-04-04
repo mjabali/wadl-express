@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://research.sun.com/wadl/2006/10">
+    <doc xmlns:jersey="http://jersey.dev.java.net/" jersey:generatedBy="Jersey: 1.1.4.1 11/24/2009 01:30 AM"/>
+    <resources base="http://api.dnbdirectapps.com/dev/DnBAPI-10/rest">
+        <resource path="/">
+            <resource path="company">
+                <resource path="{unique_id}">
+                    <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="template" name="unique_id"/>
+                    <method name="GET" id="getCompanyDetail">
+                        <request>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="view"/>
+                        </request>
+                        <response>
+                            <representation mediaType="application/json;charset=UTF-8"/>
+                        </response>
+                    </method>
+                </resource>
+                <resource path="/findcompanycleansematch">
+                    <method name="POST" id="findCompanyCleanseMatch">
+                        <request>
+                            <representation mediaType="application/json;charset=UTF-8"/>
+                        </request>
+                        <response>
+                            <representation mediaType="application/json;charset=UTF-8"/>
+                        </response>
+                    </method>
+                </resource>
+                <resource path="/familytree/">
+                    <resource path="{unique_id}">
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="template" name="unique_id"/>
+                        <method name="POST" id="getFamilyTree">
+                            <request>
+<representation mediaType="application/json"/>
+                            </request>
+                            <response>
+<representation mediaType="application/json;charset=UTF-8"/>
+                            </response>
+                        </method>
+                    </resource>
+                </resource>
+                <resource path="{unique_id}/financial">
+                    <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="template" name="unique_id"/>
+                    <resource path="summary">
+                        <method name="GET" id="summaryInformation">
+                            <response>
+<representation mediaType="application/json;charset=UTF-8"/>
+                            </response>
+                        </method>
+                    </resource>
+                </resource>
+            </resource>
+            <resource path="search/company">
+                <resource path="/advanced/">
+                    <method name="POST" id="findCompanyJSONRequest">
+                        <request>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:int" style="query" name="hit_offset"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:int" style="query" name="max_records"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="sort_direction"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:boolean" style="query" name="return_search_navigation"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="order_by"/>
+                            <representation mediaType="application/json;charset=UTF-8"/>
+                        </request>
+                        <response>
+                            <representation mediaType="application/json;charset=UTF-8"/>
+                        </response>
+                    </method>
+                </resource>
+                <resource path="/">
+                    <resource path="{keyword}">
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="template" name="keyword"/>
+                        <method name="POST" id="findCompanyJSONRequest">
+                            <request>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="query" name="duns_from"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="query" name="duns_to"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:int" style="query" name="hit_offset"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:int" style="query" name="max_records"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="sort_direction"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="search_by"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="order_by"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="return_search_navigation"/>
+<representation mediaType="application/json;charset=UTF-8"/>
+                            </request>
+                            <response>
+<representation mediaType="application/json;charset=UTF-8"/>
+                            </response>
+                        </method>
+                        <method name="GET" id="findCompany">
+                            <request>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="query" name="duns_from"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="query" name="duns_to"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:int" style="query" name="hit_offset"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:int" style="query" name="max_records"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="sort_direction"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="search_by"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="order_by"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="return_search_navigation"/>
+                            </request>
+                            <response>
+<representation mediaType="application/json;charset=UTF-8"/>
+                            </response>
+                        </method>
+                    </resource>
+                </resource>
+                <resource path="/basic/">
+                    <resource path="{keyword}">
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="template" name="keyword"/>
+                        <method name="GET" id="basicSearch">
+                            <request>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="limit"/>
+                            </request>
+                            <response>
+<representation mediaType="application/json;charset=UTF-8"/>
+                            </response>
+                        </method>
+                    </resource>
+                </resource>
+            </resource>
+            <resource path="search/person">
+                <resource path="/advanced/">
+                    <method name="POST" id="advancedPersonSearch">
+                        <request>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:int" style="query" name="hit_offset"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:int" style="query" name="max_records"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="sort_direction"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="order_by" required="true"/>
+                            <representation mediaType="application/json"/>
+                        </request>
+                        <response>
+                            <representation mediaType="application/json;charset=UTF-8"/>
+                        </response>
+                    </method>
+                </resource>
+            </resource>
+            <resource path="person">
+                <resource path="{unique_company_id}/{co_official_id}">
+                    <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="template" name="unique_company_id"/>
+                    <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="template" name="co_official_id"/>
+                    <method name="GET" id="getPersonDetail">
+                        <request>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:boolean" style="query" name="connect_mail"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="convert_currency_to"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="view" id="myParam1"/>
+                        </request>
+                        <response>
+                            <representation mediaType="application/json;charset=UTF-8"/>
+                        </response>
+                    </method>
+                </resource>
+            </resource>
+        </resource>
+        <resource type="rt_1" path="xyz">
+                <doc>Testing the doc for rt_1</doc>
+                <param name="mustbehiddenHeader" style="header"/>
+                <method href="mythod1"/>
+            </resource>
+
+
+    </resources>
+
+    <method name="POST" id="mythod1">
+        <doc>mythod1 doc</doc>
+        <request>
+            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:boolean" style="query" name="thodqp" required="true"/>
+        </request>
+    </method>
+
+
+    <resource_type id="rt_1">
+        <doc>doc from rt_1</doc>
+        <param style="matrix" name="GeilomatHeader"/>
+        <method name="GET">
+            <request>
+                <param href="myParam1"/>
+                <param name="fooparam1" style="header" required="true"/>
+            </request>
+        </method>
+    </resource_type>
+</application>

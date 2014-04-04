@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://research.sun.com/wadl/2006/10">
+    <doc xmlns:jersey="http://jersey.dev.java.net/" jersey:generatedBy="Jersey: 1.1.4.1 11/24/2009 01:30 AM"/>
+    <resources base="http://api.dnbdirectapps.com/dev/DnBAPI-10/rest">
+        <resource path="/">
+            <resource path="person" id="person-resource">
+                <resource path="{unique_company_id}/{co_official_id}">
+                    <doc xml:lang="de"><h1 aria="hot" style="color:red">Hallo Welt!</h1><p>
+
+das ist ein "test"</p>
+<p>noch einer<br class="test"/>zeile<hr/>test</p>
+                    </doc>
+                    <doc xml:lang="en">Hallo Welt!</doc>
+                    <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="template" name="unique_company_id"/>
+                    <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="template" name="co_official_id"/>
+                    
+                    <method name="GET" id="getPersonDetail">
+                        <doc>Doc for getPersonDetail</doc>
+                        <request>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:boolean" style="query" name="connect_mail">
+                                <option name="json" mediaType="application/json"/>
+                                <option name="xml" mediaType="text/xml"/>
+                            </param>
+                            />
+                            <param href="myParam1"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="convert_currency_to"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="view" required="true"/>
+                        </request>
+                        <response>
+                            <representation href="r1"/>
+                            <representation mediaType="application/json;charset=UTF-8" element="gibbetnich"/>
+                            <param style="header" name="Test-Header" required="true"/>
+                            <param style="test" name="header-thing"><option name="FOO"/></param>
+                        </response>
+                    </method>
+                </resource>
+            </resource>
+            <resource type="rt_1" path="xyz">
+                <doc>Testing the doc for rt_1</doc>
+                <param name="mustbehiddenHeader" style="header"/>
+                <method href="mythod1"/>
+            </resource>
+        </resource>
+    </resources>
+    
+    <param id="myParam1" style="query" name="myCoolQueryParam" required="true"/>
+
+    <method name="POST" id="mythod1">
+        <doc>mythod1 doc</doc>
+
+        <request>
+            <param style="header" name="FOO" required="true" fixed="123"/>
+            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:boolean" style="query" name="thodqp" required="true"/>
+        </request>
+    </method>
+
+    <representation id="r1" mediaType="application/json;charset=UTF-8" element="gibbetdoch"/>
+
+    <resource_type id="rt_1">
+        <doc>doc from rt_1</doc>
+        <param style="matrix" name="GeilomatHeader"/>
+        <method name="GET">
+            <request>
+                <param href="myParam1"/>
+                <param name="fooparam1" style="matrix"/>
+            </request>
+        </method>
+    </resource_type>
+</application>

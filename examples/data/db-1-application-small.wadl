@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://research.sun.com/wadl/2006/10">
+    <doc xmlns:jersey="http://jersey.dev.java.net/" jersey:generatedBy="Jersey: 1.1.4.1 11/24/2009 01:30 AM"/>
+    <resources base="http://api.dnbdirectapps.com/dev/DnBAPI-10/rest">
+        <resource path="/">
+            <resource path="person">
+                <resource path="{unique_company_id}/{co_official_id}">
+                    <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="template" name="unique_company_id"/>
+                    <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:long" style="template" name="co_official_id"/>
+                    <method name="GET" id="getPersonDetail">
+                        <request>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:boolean" style="query" name="connect_mail"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="convert_currency_to"/>
+                            <param xmlns:xs="http://www.w3.org/2001/XMLSchema" type="xs:string" style="query" name="view"/>
+                        </request>
+                        <response>
+                            <representation mediaType="application/json;charset=UTF-8"/>
+                        </response>
+                    </method>
+                </resource>
+            </resource>
+        </resource>
+    </resources>
+</application>
