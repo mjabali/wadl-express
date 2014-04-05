@@ -1,7 +1,7 @@
 wadl-express
 ============
 
-Transform WADL descriptions to live RESTful web APIs.
+Transform WADL descriptions to RESTful web APIs for the express web application framework.
 
    * Parses WADL description files into an intermediary JSON format with all (supported) references resolved. 
    * Creates express/connect 'pre-condition middleware' functions for each resource path, i.e. automatically creates a RESTful API with semantics as defined in the WADL file. 
@@ -19,7 +19,7 @@ Generate a REST stub module, e.g.
 This is work in progress.
 
 
-[Web Application Description Language - W3C Member Submission 31 August 2009](http://www.w3.org/Submission/2009/SUBM-wadl-20090831/)
-[WADL XSD](http://www.w3.org/Submission/wadl/wadl.xsd)
-[Connect - Hig quality middleware for node.js](http://www.senchalabs.org/connect/)
-[Express - node.js web application framework](http://expressjs.com/)
+   * [Web Application Description Language - W3C Member Submission 31 August 2009](http://www.w3.org/Submission/2009/SUBM-wadl-20090831/)
+   * [WADL XSD](http://www.w3.org/Submission/wadl/wadl.xsd)
+   * [Connect - Hig quality middleware for node.js](http://www.senchalabs.org/connect/)
+   * [Express - node.js web application framework](http://expressjs.com/)
